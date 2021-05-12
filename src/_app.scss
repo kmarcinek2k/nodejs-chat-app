@@ -1,0 +1,84 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p,
+a,
+div,
+label,
+button,
+input,
+textarea {
+  font-family: 'Dosis', sans-serif;
+}
+
+#app {
+  height: 100vh;
+}
+
+#loginForm {
+  h5 {
+    margin: 15px 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.message-container p {
+  margin: 0;
+}
+
+#send-btn:hover {
+  color: #20F2FA !important;
+}
+
+.userList-container {
+  p {
+    text-align: right;
+    cursor: pointer;
+  }
+
+  p.active {
+    color: lightgreen;
+  }
+
+  p:hover {
+    color: #29ABE2;
+  }
+}
+
+.message-info p {
+  margin: 0;
+  text-overflow: ellipsis;
+}
+
+footer {
+  width: 100vw;
+  height: 75px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .userList-container {
+    background-color: #ffffff;
+  }
+  .userList-container.false{
+    left: -240px !important;
+  }
+  .messageList-container {
+    width: calc(100% - 40px) !important;
+  }
+  .input-area {
+    width: calc(100% - 120px) !important;
+  }
+}

@@ -13,13 +13,13 @@ pipeline {
                         curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o ~/docker-compose
                         chmod +x ~/docker-compose
                         ls -l
-                        ~/docker-compose up -d docker_build
+                        ~/docker-compose up
                    
                     ''' 
                 }
 
             }
-        }
+        
         stage('Test') {
             steps {
                 echo 'Testing...'
@@ -27,9 +27,7 @@ pipeline {
                 git branch: 'Grupa03-KM306474_Lab07', url: 'https://github.com/InzynieriaOprogramowaniaAGH/MIFT2021'
                 dir('Grupy/Grupa03/KM306474/Lab07/Docker'){
                     
-                    sh '''
-                            ~/docker-compose up -d docker_build
-                    ''' 
+                   
 
                 }
             }

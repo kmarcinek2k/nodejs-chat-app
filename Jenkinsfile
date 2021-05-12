@@ -13,7 +13,7 @@ pipeline {
                         curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o ~/docker-compose
                         chmod +x ~/docker-compose
                         ls -l
-                        docker --version
+                        ~/docker-compose up -d docker_build
                    
                     ''' 
                 }
@@ -28,7 +28,7 @@ pipeline {
                 dir('Grupy/Grupa03/KM306474/Lab07/Docker'){
                     
                     sh '''
-                            ~/docker-compose up
+                            ~/docker-compose up -d docker_build
                     ''' 
 
                 }

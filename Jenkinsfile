@@ -13,7 +13,7 @@ pipeline {
                         curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o ~/docker-compose
                         chmod +x ~/docker-compose
                       
-                        curl http://localhost:8080/jenkins/git/notifyCommit?url=https://github.com/InzynieriaOprogramowaniaAGH/MIFT2021/blob/Grupa03-KM306474_Lab07/Grupy/Grupa03/KM306474/Lab07/Git/hooks/commit-msg
+                        curl http://localhost:8080/jenkins/git/notifyCommit?url=https://github.com/InzynieriaOprogramowaniaAGH/MIFT2021/blob/Grupa03-KM306474_Lab07/Grupy/Grupa03/KM306474/Lab07/Git/hooks/
                         ls -l
                         docker --version
                     ''' 

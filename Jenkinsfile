@@ -12,7 +12,8 @@ pipeline {
                     sh '''
                         curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o ~/docker-compose
                         chmod +x ~/docker-compose
-                        ~/docker-compose up -d docker-build
+                      
+                        curl http://localhost:8080/jenkins/git/notifyCommit?url=https://github.com/InzynieriaOprogramowaniaAGH/MIFT2021/blob/Grupa03-KM306474_Lab05/Grupy/Grupa03/KM306474/Lab05/sprawozdanie.txt
                         ls -l
                         docker --version
                     ''' 
@@ -28,7 +29,7 @@ pipeline {
                 dir('Grupy/Grupa03/KM306474/Lab07/Docker'){
                     
                     sh '''
-                        ~/docker-compose up -d docker-test
+                       
                     ''' 
 
                 }

@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo 'Building... '
                 git branch: 'Grupa03-KM306474_Lab07', url: 'https://github.com/InzynieriaOprogramowaniaAGH/MIFT2021'
                 dir('Grupy/Grupa03/KM306474/Lab07/Docker'){
                     

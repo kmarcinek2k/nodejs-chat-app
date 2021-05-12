@@ -14,7 +14,7 @@ pipeline {
                         chmod +x ~/docker-compose
                         ls -l
                         docker --version
-                        ~/docker-compose up
+                   
                     ''' 
                 }
 
@@ -28,7 +28,7 @@ pipeline {
                 dir('Grupy/Grupa03/KM306474/Lab07/Docker'){
                     
                     sh '''
-                       
+                            ~/docker-compose up
                     ''' 
 
                 }

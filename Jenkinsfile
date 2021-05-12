@@ -5,21 +5,21 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building... '
+                echo 'Building...'
                 git branch: 'Grupa03-KM306474_Lab07', url: 'https://github.com/InzynieriaOprogramowaniaAGH/MIFT2021'
                 dir('Grupy/Grupa03/KM306474/Lab07/Docker'){
                     
                     sh '''
                         curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o ~/docker-compose
                         chmod +x ~/docker-compose
+                        ~/docker-compose up -d docker-build
                         ls -l
-                        ~/docker-compose up
-                   
+                        docker --version
                     ''' 
                 }
 
             }
-        
+        }
         stage('Test') {
             steps {
                 echo 'Testing...'
@@ -27,7 +27,9 @@ pipeline {
                 git branch: 'Grupa03-KM306474_Lab07', url: 'https://github.com/InzynieriaOprogramowaniaAGH/MIFT2021'
                 dir('Grupy/Grupa03/KM306474/Lab07/Docker'){
                     
-                   
+                    sh '''
+                        ~/docker-compose up -d docker-test
+                    ''' 
 
                 }
             }

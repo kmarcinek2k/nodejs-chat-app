@@ -45,7 +45,7 @@ pipeline {
         failure {
             emailext attachLog: true,
                 to: 'krzysztofmarcinek98@gmail.com',
-                subject: "Failed  ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
+                subject: "Failed   ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
                 body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}"
         }
     }
